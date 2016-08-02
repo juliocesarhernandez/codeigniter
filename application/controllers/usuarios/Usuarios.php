@@ -6,6 +6,7 @@
  * Time: 10:22 PM
  */
 require APPPATH.'/controllers/BaseController.php';
+require APPPATH.'controllers/dashboard/Dashboard.php';
 Class Usuarios extends BaseController
 {
     public function __construct(){
@@ -35,7 +36,7 @@ Class Usuarios extends BaseController
 
         $request = explode('&', $request);
         $arrayKey = explode('=', $request[0]);
-        $miApiKey = $arrayKey[1];
+        //$miApiKey = $arrayKey[1];
 
         $arrayEmail = explode('=', $request[1]);
         $email = $arrayEmail[1];
@@ -52,6 +53,8 @@ Class Usuarios extends BaseController
                     //$this->response(array("status" => "failed"));
                 }else{
                     echo 'API KEY' . $generate;
+                    $tablero  = new Dashboard();
+                    $tablero->index();
                     //$this->response(array("status" => "success"));
                 }
             }else{
@@ -60,25 +63,5 @@ Class Usuarios extends BaseController
         }else{
             show_404("Ha ocurrido un error");
         }
-
-        /*if($this->input->post("miApiKey") != "")
-        {
-            //creamos una api key de forma super sencilla
-            /*
-             * level a false
-             * ignore_limits a false, as? pueden acceder sin l?mites
-             * is_private_key a false, la api es p?blica
-             * al ser p?blica, ip_addresses no debe contener ninguna ip para poder acceder
-             */
-          /*  $generate = $this->registerModel->new_api_key($level = false,$ignore_limits = false,$is_private_key = false,$ip_addresses = "");
-            if($generate){
-                //imprimimos de mala manera la api key para poder utilizarla, est? claro que esto hay que cambiarlo
-                echo $generate;
-            }else{
-                show_404("Ha ocurrido un error");
-            }
-        }else{
-            show_404("Ha ocurrido un error");
-        }*/
     }
 }
