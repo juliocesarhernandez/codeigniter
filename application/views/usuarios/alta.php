@@ -52,7 +52,7 @@
                             <input type="text" name="miApiKey" value="obtenerKey" />
                             <label for="nombre" class="col-sm-2 control-label">Email</label>
                             <div class="col-sm-10">
-                                <input type="text" required class="form-control" name="email" id="email" placeholder="Email">
+                                <input type="email" required class="form-control" name="email" id="email" placeholder="Email">
                             </div>
                         </div>
                         <div class="form-group">

@@ -87,10 +87,12 @@ class Api extends REST_Controller
     {
         $this->load->model("api_model");
         $users = $this->api_model->get_all();
-        if($users){
+
+        return $users;
+        /*if($users){
             $this->response($users, 200);
         }else{
             $this->response(NULL, 400);
-        }
+        }*/
     }
 }

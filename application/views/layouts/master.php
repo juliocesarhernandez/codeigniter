@@ -61,16 +61,12 @@
                         <span class="info">
                             <i class="fa fa-circle text-success"></i>
                         </span>
-                        <a href="javascript:" class="sidebar-nav-menu">
-
-                            <i
-                                class="fa text-info fa-lg fa-home sidebar-nav-icon"
-                            ></i>
+                        <a href="<?php echo site_url('usuarios/usuarios/listar'); ?>" class="sidebar-nav-menu">
+                            <i class="fa text-info fa-lg fa-home sidebar-nav-icon"></i>
                             <span>Usuarios</span>
-
                             <span class="badge bg-success pull-right notification">2</span>
                         </a>
-                        <ul>
+                        <!--ul>
 
                             <li><a href="<?php echo site_url('usuario/usuario'); ?>">Registrar Usuario</a>
                             </li>
@@ -78,7 +74,7 @@
                             </li>
 
 
-                        </ul>
+                        </ul-->
                     </li>
                     <li>
                          <span class="info">
