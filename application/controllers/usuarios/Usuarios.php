@@ -52,7 +52,7 @@ Class Usuarios extends BaseController
                 if($new_user === false){
                     //$this->response(array("status" => "failed"));
                 }else{
-                    echo 'API KEY' . $generate;
+                    //echo 'API KEY' . $generate;
                     $tablero  = new Dashboard();
                     $tablero->index();
                     //$this->response(array("status" => "success"));

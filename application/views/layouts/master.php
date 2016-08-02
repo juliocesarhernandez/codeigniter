@@ -66,7 +66,7 @@
                             <i
                                 class="fa text-info fa-lg fa-home sidebar-nav-icon"
                             ></i>
-                            <span>Usuario</span>
+                            <span>Usuarios</span>
 
                             <span class="badge bg-success pull-right notification">2</span>
                         </a>
