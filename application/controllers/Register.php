@@ -5,7 +5,8 @@
  * Date: 01/08/2016
  * Time: 06:44 PM
  */
-class Register extends CI_Controller
+require APPPATH.'/controllers/BaseController.php';
+class Register extends BaseController
 {
     public function __construct(){
         parent::__construct();
@@ -13,10 +14,16 @@ class Register extends CI_Controller
     }
 
     public function index(){
+
         $data = array("titulo" => "Formulario para obtener una api key");
         $this->load->helper('form');
         $this->load->helper('url');
-        $this->load->view("register_view", $data);
+        return $this->load->view($this->template,
+            [
+                'content' => $this->load->view('obtener_api_key', $data, true)
+            ]
+        );
+        //$this->load->view("register_view", $data);
     }
 
     public function newApiKey()

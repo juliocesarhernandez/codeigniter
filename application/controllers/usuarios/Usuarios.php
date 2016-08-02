@@ -22,13 +22,6 @@ Class Usuarios extends BaseController
         $this->load->helper('form');
         $this->load->helper('url');
         $this->load->view("usuarios/alta", $data);
-
-        /*return $this->load->view($this->template,
-            [
-                'content'     => $this->load->view('usuarios/alta', $data, true),
-                'javascripts' => $this->getJavascripts(),
-            ]
-        );*/
     }
 
     public function registrar()
@@ -50,12 +43,10 @@ Class Usuarios extends BaseController
             if($generate){
                 $new_user = $this->usuariosModel->registrar($email, $password);
                 if($new_user === false){
-                    //$this->response(array("status" => "failed"));
+                    show_404("Ha ocurrido un error");
                 }else{
-                    //echo 'API KEY' . $generate;
                     $tablero  = new Dashboard();
                     $tablero->index();
-                    //$this->response(array("status" => "success"));
                 }
             }else{
                 show_404("Ha ocurrido un error");

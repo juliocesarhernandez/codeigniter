@@ -41,7 +41,7 @@
                 <ul class="sidebar-nav">
                     <li>
                         <span class="info"></span>
-                        <a href="<?php echo site_url('apiKey/apiKey'); ?>">
+                        <a href="<?php echo site_url('register/index'); ?>">
                             <i class="fa text-info fa-lg  fa-shopping-bag sidebar-nav-icon"></i><span>API Key </span>
                         </a>
                     </li>
