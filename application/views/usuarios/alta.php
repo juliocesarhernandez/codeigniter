@@ -1,28 +1,3 @@
-<!--DOCTYPE html>
-<html>
-<head>
-    <style type="text/css">
-        .getApiKet{
-            width: 400px;
-            padding: 20px;
-            margin: 0 auto;
-            border-radius: 20px;
-            background: #990000;
-            color: #f9f9f9;
-            cursor: pointer;
-        }
-    </style>
-    <title><?php //echo $titulo ?></title>
-</head>
-<body>
-<?php //echo form_open(base_url("index.php/register/newApiKey")) ?>
-<input type="text" name="usuario" placeholder="Usuario" required>
-<input type="password" name="password" placeholder="Password" required>
-<input type="text" name="miApiKey" value="get!" />
-<input type="submit" class="getApiKet" value="Obtener mi api key" />
-<?php echo form_close() ?>
-</body>
-</html-->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -41,8 +16,7 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <style>
-        body
-        {
+        body{
             background-image: url("<?php echo base_url('public/images/background.png'); ?>");
             background-repeat: no-repeat;
         }
@@ -51,42 +25,59 @@
             margin-top: 20%;
         }
 
+        a{
+            color: #9ED5E4;
+            font-size: 16px;
+        }
+
     </style>
 </head>
-<body background="<?php echo base_url('public/images/background.png'); ?>">
+<body>
 <div class="separator-tb">
 
 </div>
+<div>
 
-<div class="row" ng-controller="UsuarioController">
+</div>
+<div class="row">
     <div class="col-sm-6 col-md-offset-3">
+        <h3 style="color: #FFFFFF; text-align: center">&iexcl;Bienvenido a Kontrol!</h3>
         <div class="panel panel-default">
             <div class="panel-heading"><img src="<?php echo base_url('public/images/logo.png');?>"></div>
             <div class="panel-body">
                 <div class="col-sm-8 col-md-offset-2">
-                    <form class="form-horizontal" ng-submit="registrar()">
+                    <?php echo form_open(base_url("index.php/usuarios/usuarios/registrar")) ?>
+                    <!--form class="form-horizontal"-->
                         <div class="form-group">
-                            <label for="nombre" class="col-sm-2 control-label">Nombre</label>
+                            <input type="text" name="miApiKey" value="obtenerKey" />
+                            <label for="nombre" class="col-sm-2 control-label">Email</label>
                             <div class="col-sm-10">
-                                <input type="text" required class="form-control" ng-model="usuario.nombre" id="nombre" placeholder="Nombre">
+                                <input type="text" required class="form-control" name="email" id="email" placeholder="Email">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="email" class="col-sm-2 control-label">Email</label>
+                            <label for="email" class="col-sm-2 control-label">Password</label>
                             <div class="col-sm-10">
-                                <input type="email" required class="form-control" ng-model="usuario.email" id="email" placeholder="Email">
+                                <input type="password" required class="form-control" name="password" id="password" placeholder="Password">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
-                                <button type="submit"  class="btn btn-default btn-block">Registrar</button>
+                                <button type="submit" class="btn btn-default btn-block">Entrar</button>
                             </div>
                         </div>
-                    </form>
+                    <?php echo form_close() ?>
+                    <!--/form-->
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <a href="#" style="text-align: center;">&iquest;Olvidaste tu contrase&ntilde;a?</a>
+                    </div>
                 </div>
             </div>
         </div>
-
+        <div class="col-sm-offset-2 col-sm-10">
+            <label>&iquest;No tienes cuenta?</label>&nbsp;
+            <a href="#" style="text-align: center;">registrate aqu&iacute;</a>
+        </div>
 
     </div>
 </div>
