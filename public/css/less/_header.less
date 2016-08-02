@@ -1,0 +1,77 @@
+header.navbar-default,
+header.navbar-inverse {
+  padding: 0;
+  margin: 0;
+  min-width: 320px;
+  border: none;
+}
+
+
+header.navbar-default {
+  background-color: #ffffff;
+  .dropdown-menu {
+    padding: 10px 0px;
+  }
+  .dropdown-menu>li>a{
+    padding: 10px 37px;
+    font-weight: bold;
+    color: @brand-primary;
+  }
+
+}
+
+
+#sidebar {
+  background-color: @brand-primary;
+}
+
+/* Header Nav */
+.navbar-default .navbar-nav > li > a {
+  /*color: #454e59;*/
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: #ffffff;
+}
+
+.nav.navbar-nav-custom {
+  float: left;
+  margin: 0;
+}
+
+.nav.navbar-nav-custom > li {
+  min-height: 50px;
+  float: left;
+  margin-right: 80px;
+}
+
+.nav.navbar-nav-custom > li > a {
+  min-width: 50px;
+  padding: 5px 7px;
+  line-height: 50px;
+  text-align: center;
+  position: relative;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.nav.navbar-nav-custom > li > a .gi,
+.nav.navbar-nav-custom > li > a .hi,
+.nav.navbar-nav-custom > li > a .si,
+.nav.navbar-nav-custom > li > a .fi {
+  margin-top: -3px;
+}
+
+.nav.navbar-nav-custom > li > a > img {
+  width: 40px;
+  height: 40px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, .75);
+  border-radius: 20px;
+  vertical-align: top;
+}
+
+.nav.navbar-nav-custom .dropdown-menu {
+  margin-top: 0;
+}
