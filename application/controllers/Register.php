@@ -23,7 +23,6 @@ class Register extends BaseController
                 'content' => $this->load->view('obtener_api_key', $data, true)
             ]
         );
-        //$this->load->view("register_view", $data);
     }
 
     public function newApiKey()

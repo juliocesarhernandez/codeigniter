@@ -16,6 +16,7 @@ class Api extends REST_Controller
         'posts_user_get' => array('level' => 0, 'limit' => 10),//se necesita level 0 y sólo se pueden hacer 10 consultas por hora
         'new_user_post' => array('level' => 1),//se necesita level 1, no hay limite de peticiones
         'user_post' => array('level' => 1, 'limit' => 5),//se necesita level 1 y 5 peticiones
+        'logs_get' => array('level' => 0),
     );
 
     //obtener datos de un usuario

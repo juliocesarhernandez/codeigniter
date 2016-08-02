@@ -15,7 +15,7 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body ng-app="App">
+<body ng-app="apiApp">
 
 <div id="page-container" class="header-fixed-top sidebar-visible-lg-full">
 
