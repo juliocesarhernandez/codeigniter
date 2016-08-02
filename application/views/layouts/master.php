@@ -7,20 +7,8 @@
     <meta charset="UTF-8">
     <title>Kontrol</title>
     <link rel="icon" type="image/png" href="<?php echo base_url('public/images/kichink_favicon.png'); ?>">
-    <!--link href='https://fonts.googleapis.com/css?family=Poppins:500' rel='stylesheet' type='text/css'-->
-    <script src="<?php echo base_url('public/js/jquery-3.1.0.min.js');?>"></script>
+    <script src="<?php echo base_url('public/js/jquery-3.1.0.min.js'); ?>"></script>
     <link rel="stylesheet" href="<?php echo base_url('public/css/bootstrap.min.css'); ?>" type="text/css"/>
-
-    <!--link rel="stylesheet"
-          href="<?php echo base_url('public/bower_components/font-awesome/css/font-awesome.min.css'); ?>"
-          type="text/css"/-->
-    <!--link rel="stylesheet" href="<?php echo base_url('public/bower_components/morris.js/morris.css'); ?>">
-    <link rel="stylesheet" href="<?php echo base_url('public/bower_components/sweetalert/dist/sweetalert.css'); ?>"-->
-    <?php if (isset($stylesheets)) : ?>
-        <?php foreach ($stylesheets as $stylesheet): ?>
-            <link rel="stylesheet" href="<?php echo base_url("public/{$javascript}"); ?>">
-        <?php endforeach; ?>
-    <?php endif; ?>
 
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -51,53 +39,28 @@
             <div class="sidebar-content">
                 <!-- Sidebar Navigation -->
                 <ul class="sidebar-nav">
-                    <!--li>
-                        <a href="{{URL::to('Panel/Panel')}}"><i class="fa fa-line-chart sidebar-nav-icon"  data-original-title="Indicadores"></i><span >Indicadores</span></a>
-                    </li-->
-
-
                     <li>
-
+                        <span class="info"></span>
+                        <a href="<?php echo site_url('apiKey/apiKey'); ?>">
+                            <i class="fa text-info fa-lg  fa-shopping-bag sidebar-nav-icon"></i><span>API Key </span>
+                        </a>
+                    </li>
+                    <li>
+                        <span class="info"></span>
+                        <a href="<?php echo site_url('log/log/listar'); ?>">
+                            <i class="fa text-info fa-lg  fa-shopping-bag sidebar-nav-icon"></i><span>Log </span>
+                        </a>
+                    </li>
+                    <li>
                         <span class="info">
                             <i class="fa fa-circle text-success"></i>
                         </span>
                         <a href="<?php echo site_url('usuarios/usuarios/listar'); ?>" class="sidebar-nav-menu">
                             <i class="fa text-info fa-lg fa-home sidebar-nav-icon"></i>
-                            <span>Usuarios</span>
-                            <span class="badge bg-success pull-right notification">2</span>
+                            <span>Lista de usuarios</span>
+                            <!--span class="badge bg-success pull-right notification">2</span-->
                         </a>
-                        <!--ul>
-
-                            <li><a href="<?php echo site_url('usuario/usuario'); ?>">Registrar Usuario</a>
-                            </li>
-                            <li><a href="<?php echo site_url('usuario/usuario/listar'); ?>">Lista Usuarios</a>
-                            </li>
-
-
-                        </ul-->
                     </li>
-                    <li>
-                         <span class="info">
-
-                        </span>
-                        <a href="<?php echo site_url('log/log'); ?>">
-                            <i
-                                class="fa text-info fa-lg  fa-shopping-bag sidebar-nav-icon"
-
-                            ></i><span>Log </span></a>
-                    </li>
-                    <li>
-                         <span class="info">
-
-                        </span>
-                        <a href="<?php echo site_url('apiKey/apiKey'); ?>">
-                            <i
-                                class="fa text-info fa-lg  fa-shopping-bag sidebar-nav-icon"
-
-                            ></i><span>API Key </span></a>
-                    </li>
-
-
                 </ul>
                 <!-- END Sidebar Navigation -->
             </div>

@@ -95,4 +95,12 @@ class Api extends REST_Controller
             $this->response(NULL, 400);
         }*/
     }
+
+    public function logs_get()
+    {
+        $this->load->model("api_model");
+        $log = $this->api_model->get_log();
+
+        return $log;
+    }
 }

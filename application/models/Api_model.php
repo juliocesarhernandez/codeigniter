@@ -7,7 +7,8 @@
  */
 class Api_model extends CI_Model
 {
-    public function get($id){
+    public function get($id)
+    {
         $this->db->select("email,register_date");
         $query = $this->db->get_where("users", array("id" => $id));
         if($query->num_rows() == 1){
@@ -15,7 +16,8 @@ class Api_model extends CI_Model
         }
     }
 
-    public function get_all(){
+    public function get_all()
+    {
         $this->load->database();
 
         $query = $this->db->get("users");
@@ -24,7 +26,18 @@ class Api_model extends CI_Model
         }
     }
 
-    public function posts($id){
+    public function get_log()
+    {
+        $this->load->database();
+
+        $query = $this->db->get("logs");
+        if($query->num_rows() > 0){
+            return $query->result();
+        }
+    }
+
+    public function posts($id)
+    {
         $this->db->where("user_id", $id);
         $query = $this->db->get("messages_api");
         if($query->num_rows() > 0){
@@ -32,7 +45,8 @@ class Api_model extends CI_Model
         }
     }
 
-    public function create_user($username,$password){
+    public function create_user($username,$password)
+    {
         $data = array(
             "username" => $username,
             "password" => $password
