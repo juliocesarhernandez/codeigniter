@@ -15,7 +15,7 @@ Class Log extends BaseController
         $data['logs'] = $api->logs_get();
         return $this->load->view($this->template,
             [
-                'content'     => $this->load->view('log/log', $data, true)
+                'content' => $this->load->view('log/log', $data, true)
             ]
         );
     }

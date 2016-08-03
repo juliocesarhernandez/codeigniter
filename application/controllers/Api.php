@@ -5,22 +5,21 @@
  * Date: 01/08/2016
  * Time: 06:51 PM
  */
-//debemos colocar esta línea para extender de REST_Controller
+//debemos colocar esta lï¿½nea para extender de REST_Controller
 require(APPPATH.'/libraries/REST_Controller.php');
 class Api extends REST_Controller
 {
     //con esto limitamos las consultas y los permisos a la api
     protected $methods = array(
         'users_get' => array('level' => 0),//para acceder a users_get debe tener level 1 y no hay limite de consultas por hora
-        'user_get' => array('level' => 0, 'limit' => 10),//user_get sólo level 0, pero máximo 10 consultas por hora
-        'posts_user_get' => array('level' => 0, 'limit' => 10),//se necesita level 0 y sólo se pueden hacer 10 consultas por hora
+        'user_get' => array('level' => 0, 'limit' => 10),//user_get sÃ³lo level 0, pero mÃ¡ximo 10 consultas por hora
+        'posts_user_get' => array('level' => 0, 'limit' => 10),//se necesita level 0 y sÃ³lo se pueden hacer 10 consultas por hora
         'new_user_post' => array('level' => 1),//se necesita level 1, no hay limite de peticiones
         'user_post' => array('level' => 1, 'limit' => 5),//se necesita level 1 y 5 peticiones
         'logs_get' => array('level' => 0),
     );
 
     //obtener datos de un usuario
-    //http://localhost/apiRestCodeigniter/api/user/id/userid/format/formato/X-API-KEY/miapikey
     public function user_get()
     {
         if(!$this->get("id")){
@@ -34,8 +33,7 @@ class Api extends REST_Controller
             $this->response(NULL, 400);
         }
     }
-    //obtener mensajes de un usuario por la id del usuario
-    //http://localhost/apiRestCodeigniter/api/posts/id/id_user/format/formato/X-API-KEY/miapikey
+
     public function posts_user_get()
     {
         if(!$this->get("id")){
@@ -50,8 +48,6 @@ class Api extends REST_Controller
         }
     }
 
-    //crear un nuevo usuario
-    //http://localhost/apiRestCodeigniter/api/new_user/X-API-KEY/miapikey
     public function new_user_post()
     {
         if($this->post("username") && $this->post("password")){
@@ -65,14 +61,12 @@ class Api extends REST_Controller
         }
     }
 
-    //actualizar un nuevo usuario
-    //http://localhost/apiRestCodeigniter/api/user/X-API-KEY/miapikey
-    public function user_post()
+        public function user_post()
     {
         $this->load->model("api_model");
         $result = $this->api_model->update($this->post("id"), array(
-            "name"      =>      $this->post("name"),
-            "email"     =>      $this->post("email")
+            "email" => $this->post("email"),
+            "password" => $this->post("password")
         ));
 
         if($result === false){
@@ -82,8 +76,6 @@ class Api extends REST_Controller
         }
     }
 
-    //obtener a todos los usuarios
-    //http://localhost/apiRestCodeigniter/api/users/X-API-KEY/miapikey
     public function users_get()
     {
         $this->load->model("api_model");

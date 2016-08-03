@@ -27,24 +27,12 @@ class Register extends BaseController
 
     public function newApiKey()
     {
-        //if($this->input->post("miApiKey") != "")
-        //{
-            //creamos una api key de forma super sencilla
-            /*
-             * level a false
-             * ignore_limits a false, as� pueden acceder sin l�mites
-             * is_private_key a false, la api es p�blica
-             * al ser p�blica, ip_addresses no debe contener ninguna ip para poder acceder
-             */
-            $generate = $this->registerModel->new_api_key($level = false,$ignore_limits = false,$is_private_key = false,$ip_addresses = "");
-            if($generate){
-                //imprimimos de mala manera la api key para poder utilizarla, est� claro que esto hay que cambiarlo
-                echo $generate;
-            }else{
-                show_404("Ha ocurrido un error");
-            }
-        //}else{
-          //  show_404("Ha ocurrido un error");
-        //}
+        $generate = $this->registerModel->new_api_key($level = false,$ignore_limits = false,$is_private_key = false,$ip_addresses = "");
+        if($generate){
+            //imprimimos de mala manera la api key para poder utilizarla.
+            echo $generate;
+        }else{
+            show_404("Ha ocurrido un error");
+        }
     }
 }
