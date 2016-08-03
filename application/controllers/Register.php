@@ -27,8 +27,8 @@ class Register extends BaseController
 
     public function newApiKey()
     {
-        if($this->input->post("miApiKey") != "")
-        {
+        //if($this->input->post("miApiKey") != "")
+        //{
             //creamos una api key de forma super sencilla
             /*
              * level a false
@@ -43,8 +43,8 @@ class Register extends BaseController
             }else{
                 show_404("Ha ocurrido un error");
             }
-        }else{
-            show_404("Ha ocurrido un error");
-        }
+        //}else{
+          //  show_404("Ha ocurrido un error");
+        //}
     }
 }
