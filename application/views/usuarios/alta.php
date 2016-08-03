@@ -49,7 +49,7 @@
                     <?php echo form_open(base_url("index.php/usuarios/usuarios/registrar")) ?>
                     <!--form class="form-horizontal"-->
                         <div class="form-group">
-                            <input type="text" name="miApiKey" value="obtenerKey" />
+                            <input type="hidden" name="miApiKey" value="obtenerKey" />
                             <label for="nombre" class="col-sm-2 control-label">Email</label>
                             <div class="col-sm-10">
                                 <input type="email" required class="form-control" name="email" id="email" placeholder="Email">

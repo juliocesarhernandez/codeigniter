@@ -27,13 +27,12 @@ Class Usuarios extends BaseController
     public function registrar()
     {
         $request = file_get_contents('php://input');
-
         $request = explode('&', $request);
         //$arrayKey = explode('=', $request[0]);
         //$miApiKey = $arrayKey[1];
 
         $arrayEmail = explode('=', $request[1]);
-        $email = $arrayEmail[1];
+        $email = str_replace('%40', '@', $arrayEmail[1]);
 
         $arrayPassword = explode('=', $request[2]);
         $password = $arrayPassword[1];
@@ -62,8 +61,9 @@ Class Usuarios extends BaseController
         $data['usuarios'] = $api->users_get();
         return $this->load->view($this->template,
             [
-                'content'     => $this->load->view('usuarios/lista', $data, true)
+                'content' => $this->load->view('usuarios/lista', $data, true)
             ]
         );
     }
 }
+

@@ -61,6 +61,15 @@
                             <!--span class="badge bg-success pull-right notification">2</span-->
                         </a>
                     </li>
+                    <li>
+                        <span class="info">
+                            <i class="fa fa-circle text-success"></i>
+                        </span>
+                        <a href="<?php echo site_url('usuarios/usuarios/'); ?>" class="sidebar-nav-menu">
+                            <i class="fa text-info fa-lg fa-home sidebar-nav-icon"></i>
+                            <span>Salir</span>
+                        </a>
+                    </li>
                 </ul>
                 <!-- END Sidebar Navigation -->
             </div>
